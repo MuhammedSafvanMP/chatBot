@@ -7,13 +7,13 @@ export default function Main() {
   
   return (
 
-    
+
     // Main content section
     <section className=" flex justify-center items-center">
-      <h2 className="absolute top-6 left-8 text-mlg_text text-3xl font-semibold">
+      <h2 className="absolute top-6 left-8  text-2xl font-semibold text-white md:text-mlg_text lg:text-3xl">
         ChatBOT <i className="fa-solid fa-circle text-2xl"></i>
       </h2>
-      <div className="flex flex-col justify-center  w-full h-screen pl-10 bg-mlg_primary text-mlg_text">
+      <div className="hidden md:flex flex-col justify-center  w-full h-screen pl-10 bg-mlg_primary text-mlg_text ">
         <h3 className="text-6xl font-bold auto-typed">
           {/* Auto Typing code */}
           <Typewriter
@@ -52,18 +52,19 @@ export default function Main() {
             typeSpeed={70}
             deleteSpeed={50}
             delaySpeed={1000}
+            
           />
         </p>
       </div>
 
             {/* Log in & Sign up link section */}
 
-      <div className="w-8/12 h-screen bg-black text-white flex flex-col justify-end items-center text-center">
+      <div className="w-full lg:w-8/12 h-screen bg-black text-white flex flex-col justify-end items-center text-center">
             <div className="h-2/4 flex flex-col items-center">
-              <h2 className="pb-5 text-3xl font-medium">Get started</h2>
-              <div className="flex gap-4 text-xl font-medium">
-              <Link  className="px-20 py-4 rounded-md bg-mlg_btn hover:bg-blue-800">Login</Link>
-            <Link  className="px-20 py-4 rounded-md bg-mlg_btn hover:bg-blue-800">
+              <h2 className="pb-5 text-2xl font-medium md:text-3xl">Get started</h2>
+              <div className="flex flex-col gap-4 text-lg font-medium md:flex-row md:text-xl">
+              <Link  className="px-36 py-3 rounded-md bg-mlg_btn hover:bg-blue-800 md:px-14 md:py-4 lg:px-20">Login</Link>
+            <Link  className="px-36 py-3 rounded-md bg-mlg_btn hover:bg-blue-800 md:px-14 md:py-4 lg:px-20">
               Sign up
             </Link>
               </div>
@@ -73,10 +74,10 @@ export default function Main() {
 
             <footer className="pb-10">
           <div className="pb-5 flex gap-1 pl-10">
-            <img src="./img/chatgpt.svg" alt="chatGPT-logo" className="w-7" />
-            <h4 className="text-2xl">OpenAI</h4>
+            <img src="./img/chatgpt.svg" alt="chatGPT-logo" className="w-6 md:w-7" />
+            <h4 className="text-base md:text-2xl">OpenAI</h4>
           </div>
-          <div className="flex gap-4 text-sm text-gray-400">
+          <div className="flex gap-4 text-xs text-gray-400 md:text-sm">
             <span>Terms of use</span>|<span>Privacy Policy</span>
           </div>
         </footer>

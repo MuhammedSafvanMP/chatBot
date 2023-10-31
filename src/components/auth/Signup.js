@@ -7,7 +7,7 @@ const Signup = () => {
       <img src="./img/log_chatgpt.svg" alt="chatGPT-logo" className="w-7 absolute top-9" />
       <div className="h-screen w-screen flex flex-col justify-between items-center pt-52">
         <div className="flex flex-col gap-3 text-center w-96">
-          <h2 className="text-2xl font-bold md:ext-4xl">Create your account</h2>
+          <h2 className="text-2xl font-bold md:text-4xl">Create your account</h2>
           <p className='pb-5 text-sm'>Note that phone verification may be required for <br /> signup. Your number will only be used to verify your <br /> identity for security purposes.</p>
           <div className="relative p-5 md:p-0">
             <input type="email" className="input border-2 rounded-lg pl-3 py-3 w-full max-w-6xl outline-none md:pl-4 md:py-4" />

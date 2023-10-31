@@ -9,7 +9,7 @@ module.exports = {
           mlg_primary: "#00002E",
           mlg_text: "#D292FF",
           mlg_btn: "#3C46FF",
-          mlg_butn: "#10A37F",
+          alg_btn: "#10A37F",
       }     
     },
   },

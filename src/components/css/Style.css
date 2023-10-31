@@ -1,0 +1,14 @@
+.input:focus + .placeholder{
+    top: -12px;
+    color: #10A37F;
+    background-color: #fff;
+}
+.input:focus + .placeholders{
+    top: -0px;
+    color: #10A37F;
+    background-color: #fff;
+}
+
+.hide-scroll-bar::-webkit-scrollbar{
+    display: none;
+}

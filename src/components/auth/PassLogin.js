@@ -17,7 +17,7 @@ export default function Password() {
         <input type="password" className="input border-2 rounded-lg pl-4 py-4 w-full max-w-6xl outline-none "/>
         <label className="placeholder absolute top-8 left-10 pointer-events-none transition delay-75  text-gray-500 md:top-4 md:left-4">Password</label>
       </div>
-      <Link to='/reset' className='text-alg_btn ml-6 text-left md:ml-0'>Forgot password?</Link>
+      <Link to={'/login/Passlogin/forgotpassword'} className='text-alg_btn ml-6 text-left md:ml-0'>Forgot password?</Link>
       <button  className="py-3 mx-5 rounded-lg text-white  bg-alg_btn md:py-4 md:mt-5 md:mx-0">Continue</button>
       <p>
         Don't have an account? <Link to={'/signup/passsignup'} className="text-alg_btn pl-1">Sign up</Link>

@@ -64,7 +64,7 @@ export default function Main() {
               <h2 className="pb-5 text-2xl font-medium md:text-3xl">Get started</h2>
               <div className="flex flex-col gap-4 text-lg font-medium md:flex-row md:text-xl">
               <Link to={'/login'} className="px-36 py-3 rounded-md bg-mlg_btn hover:bg-blue-800 md:px-14 md:py-4 lg:px-20">Login</Link>
-            <Link  className="px-36 py-3 rounded-md bg-mlg_btn hover:bg-blue-800 md:px-14 md:py-4 lg:px-20">
+            <Link to={'/signup'}  className="px-36 py-3 rounded-md bg-mlg_btn hover:bg-blue-800 md:px-14 md:py-4 lg:px-20">
               Sign up
             </Link>
               </div>

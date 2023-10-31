@@ -13,11 +13,11 @@ export default function Log() {
           <h2 className="text-2xl font-bold pb-5 md:ext-4xl">Welcome back</h2>
           <div className=" relative p-5 md:p-0">
             <input type="text"  className="input border-2 rounded-lg pl-3 py-3 w-full max-w-6xl outline-none md:pl-4 md:py-4"/>
-            <label className="placeholders absolute top-8 left-10 pointer-events-none transition delay-75 text-gray-500 md:top-4 md:left-4 placeholder">Email address</label>
+            <label className="placeholder absolute top-8 left-10 pointer-events-none transition delay-75 text-gray-500 md:top-4 md:left-4">Email address</label>
           </div>
-          <Link to='/pass'  className="py-3 mx-5 rounded-lg text-white  bg-alg_btn md:py-4 md:mt-5">Continue</Link>
+          <Link to='/pass'  className="py-3 mx-5 rounded-lg text-white  bg-alg_btn md:py-4 md:mt-5 md:mx-0">Continue</Link>
           <p>
-            Don't have an account? <Link to='/sign' className="text-alg_btn pl-1">Sign up</Link>
+            Don't have an account? <Link to={'/signup'} className="text-alg_btn pl-1">Sign up</Link>
           </p>
           <div className="mt-4 flex items-center justify-center">
             <div className="w-2/3 border-t border-gray-400"></div>

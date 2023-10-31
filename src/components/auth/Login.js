@@ -15,7 +15,7 @@ export default function Log() {
             <input type="text"  className="input border-2 rounded-lg pl-3 py-3 w-full max-w-6xl outline-none md:pl-4 md:py-4"/>
             <label className="placeholder absolute top-8 left-10 pointer-events-none transition delay-75 text-gray-500 md:top-4 md:left-4">Email address</label>
           </div>
-          <Link to='/pass'  className="py-3 mx-5 rounded-lg text-white  bg-alg_btn md:py-4 md:mt-5 md:mx-0">Continue</Link>
+          <Link to={'/login/passlogin'}  className="py-3 mx-5 rounded-lg text-white  bg-alg_btn md:py-4 md:mt-5 md:mx-0">Continue</Link>
           <p>
             Don't have an account? <Link to={'/signup'} className="text-alg_btn pl-1">Sign up</Link>
           </p>
@@ -43,6 +43,7 @@ export default function Log() {
           </div>
         </footer>
       </div>
+      
     </section>
   );
 

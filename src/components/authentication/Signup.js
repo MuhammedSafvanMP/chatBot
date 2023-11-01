@@ -1,6 +1,40 @@
-import { Link } from "react-router-dom";
+import { GithubAuthProvider, GoogleAuthProvider, OAuthProvider, signInWithPopup } from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../config/firebase";
 
 const Signup = () => {
+  
+  const chatBot = useNavigate(); 
+
+  const handleGoogle = async (e) => {
+    try {
+        const provaider = await new GoogleAuthProvider();
+        chatBot('/chatbot');
+        return signInWithPopup(auth, provaider);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const handleMicrosft = async (e) => {
+    try {
+      const provider = await new OAuthProvider('microsoft.com');
+      chatBot('/chatbot');
+      return signInWithPopup(auth, provider);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const gitHub = async (e) => {
+      try {
+        const provider = await new GithubAuthProvider();
+        chatBot('chatbot');
+        return signInWithPopup(auth, provider);
+      } catch (error) {
+        console.log(error);
+      }
+  }
 
   return (
     <section className="flex justify-center items-center p-5 md:p-0">
@@ -24,15 +58,15 @@ const Signup = () => {
             <span className="mx-4 text-xs">OR</span>
             <div className="w-2/3 border-t border-gray-400"></div>
           </div>
-          <div className="flex gap-4 mx-5 pl-4 py-4 border-2 rounded-lg border-gray-300 md:mx-0">
+          <div onClick={handleGoogle} className="flex gap-4 mx-5 pl-4 py-4 border-2 rounded-lg border-gray-300 cursor-pointer md:mx-0">
             <img src="./img/google.png" alt="" className="w-5" />
             Continue with Google
           </div>
-          <div className="flex gap-4 mx-5 pl-4 py-4 border-2 rounded-lg border-gray-300 md:mx-0">
+          <div onClick={handleMicrosft} className="flex gap-4 mx-5 pl-4 py-4 border-2 rounded-lg border-gray-300 cursor-pointer md:mx-0">
             <img src="./img/micro.png" alt="" className="w-5" />
             Continue with Microsoft Account
           </div>
-          <div className="flex gap-4 mx-5 pl-4 items-center py-4 border-2 rounded-lg border-gray-300 md:mx-0">
+          <div onClick={gitHub} className="flex gap-4 mx-5 pl-4 items-center py-4 border-2 rounded-lg border-gray-300 cursor-pointer md:mx-0">
             <i className="fa-brands fa-apple text-xl"></i> Continue with Apple
           </div>
         </div>

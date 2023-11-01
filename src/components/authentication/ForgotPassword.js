@@ -1,8 +1,21 @@
+import { sendPasswordResetEmail } from 'firebase/auth';
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { auth } from '../config/firebase';
 
 
 export default function ResetPassword() {
  
+    const [email, setEmail] = useState("");
+
+    const resetPassword = async () => {
+      try {
+        await sendPasswordResetEmail(auth,email); 
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  
   return (
     <section className="flex  justify-center items-center ">
     <img src="/img/log_chatgpt.svg" alt="chatGPT-logo" className="w-7 absolute top-9"  />
@@ -12,10 +25,10 @@ export default function ResetPassword() {
       <p className='pb-5 text-sm'>Enter your email address and we will send you instructions to reset your password.</p>
 
       <div className=" relative  px-5 md:p-0">
-        <input type="email"  className="input border-2 rounded-lg pl-4 py-4 w-full max-w-6xl outline-none "/>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}  className="input border-2 rounded-lg pl-4 py-4 w-full max-w-6xl outline-none "/>
         <label className="placeholder absolute top-5 left-10 pointer-events-none transition delay-75  text-gray-500 md:top-4 md:left-4">Email address</label>
       </div>
-      <button className="py-3 mx-5  rounded-lg text-white  bg-alg_btn md:py-4 md:mt-5 md:mx-0">Continue</button>
+      <button onClick={resetPassword} className="py-3 mx-5  rounded-lg text-white  bg-alg_btn md:py-4 md:mt-5 md:mx-0">Continue</button>
       <Link to={'/login/passlogin'} className='text-alg_btn'>
         Back to Apps Client
       </Link>

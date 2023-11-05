@@ -1,10 +1,45 @@
+import { GoogleAuthProvider, OAuthProvider, signInWithPopup } from 'firebase/auth';
 import '../css/Style.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from '../config/firebase';
 
 
 
 export default function Log() {
 
+  const chatBot = useNavigate();
+
+  const handleGoogle = async () => {
+    try {
+      const provaider = await new GoogleAuthProvider();
+      chatBot('/chatbot');
+      return signInWithPopup(auth, provaider);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const handleMicrosft = async () => {
+    try {
+      const provaider = await new OAuthProvider('microsoft.com');
+      chatBot('/chatbot');
+      return signInWithPopup(auth, provaider);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+    const handleApple = async () => {
+      try {
+        const provider = await new OAuthProvider('apple.com');
+        chatBot('/chatbot');
+        return signInWithPopup(auth, provider);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  
   return (
     <section className="flex  justify-center items-center p-5 md:p-0">
         <img src="./img/log_chatgpt.svg" alt="chatGPT-logo" className="w-7 absolute top-9"  />
@@ -24,15 +59,15 @@ export default function Log() {
             <span className="mx-4 text-xs">OR</span>
             <div className="w-2/3 border-t border-gray-400"></div>
           </div>
-          <div className="flex gap-4 mx-5 pl-4 py-4 border-2 rounded-lg border-gray-300 md:mx-0">
+          <div onClick={handleGoogle} className="flex gap-4 mx-5 pl-4 py-4 border-2 rounded-lg border-gray-300 cursor-pointer md:mx-0">
             <img src="./img/google.png" alt=""  className="w-5"/>
             Continue with Google
           </div>
-          <div className="flex gap-4 mx-5 pl-4 py-4 border-2 rounded-lg border-gray-300 md:mx-0">
+          <div onClick={handleMicrosft} className="flex gap-4 mx-5 pl-4 py-4 border-2 rounded-lg border-gray-300 cursor-pointer md:mx-0">
             <img src="./img/micro.png" alt="" className="w-5" />
             Continue with Microsoft Account
           </div>
-          <div className="flex gap-4 mx-5 pl-4 items-center py-4 border-2 rounded-lg border-gray-300 md:mx-0">
+          <div onClick={handleApple} className="flex gap-4 mx-5 pl-4 items-center py-4 border-2 rounded-lg border-gray-300 cursor-pointer md:mx-0">
             <i class="fa-brands fa-apple text-xl"></i> Continue with Apple
           </div>
         </div>

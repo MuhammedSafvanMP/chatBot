@@ -26,14 +26,14 @@ const Signup = () => {
     }
   }
 
-  const gitHub = async (e) => {
-      try {
-        const provider = await new GithubAuthProvider();
-        chatBot('chatbot');
-        return signInWithPopup(auth, provider);
-      } catch (error) {
-        console.log(error);
-      }
+  const handleApple = async () => {
+    try {
+      const provider = await new OAuthProvider('apple.com');
+      chatBot('/chatbot');
+      return signInWithPopup(auth, provider);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -66,7 +66,7 @@ const Signup = () => {
             <img src="./img/micro.png" alt="" className="w-5" />
             Continue with Microsoft Account
           </div>
-          <div onClick={gitHub} className="flex gap-4 mx-5 pl-4 items-center py-4 border-2 rounded-lg border-gray-300 cursor-pointer md:mx-0">
+          <div onClick={handleApple} className="flex gap-4 mx-5 pl-4 items-center py-4 border-2 rounded-lg border-gray-300 cursor-pointer md:mx-0">
             <i className="fa-brands fa-apple text-xl"></i> Continue with Apple
           </div>
         </div>
